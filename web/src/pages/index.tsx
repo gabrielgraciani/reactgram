@@ -1,11 +1,11 @@
-import { Catalog } from "../components/Catalog";
-import { Cart } from "../components/Cart";
+import { Catalog } from '../components/Catalog';
+import { Cart } from '../components/Cart';
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <>
-      <Catalog /> 
+      <Catalog />
       <Cart />
     </>
-  )
+  );
 }

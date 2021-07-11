@@ -5,8 +5,8 @@ export function addProductToCartRequest(product: IProduct) {
     type: ActionTypes.addProductToCartRequest,
     payload: {
       product,
-    }
-  }
+    },
+  };
 }
 
 export function addProductToCartSuccess(product: IProduct) {
@@ -14,8 +14,8 @@ export function addProductToCartSuccess(product: IProduct) {
     type: ActionTypes.addProductToCartSuccess,
     payload: {
       product,
-    }
-  }
+    },
+  };
 }
 
 export function addProductToCartFailure(productId: number) {
@@ -23,6 +23,6 @@ export function addProductToCartFailure(productId: number) {
     type: ActionTypes.addProductToCartFailure,
     payload: {
       productId,
-    }
-  }
+    },
+  };
 }
