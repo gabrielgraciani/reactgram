@@ -51,8 +51,8 @@
      "import/prefer-default-export": "off",
      "react/jsx-props-no-spreading": "off",
      "no-shadow": "off",
-     "@typescript-eslint/explicit-module-boundary-types": "off",
-     "no-param-reassign": "off"
+     "no-param-reassign": "off",
+     "@typescript-eslint/no-empty-interface": "off"
     },
     "settings": {
       "import/resolver": {

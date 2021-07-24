@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { IProduct, ActionTypes } from './types';
 
 export function addProductToCartRequest(product: IProduct) {

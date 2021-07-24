@@ -17,8 +17,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: #fff;
-    color: #000;
+    background: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
     height:100%;
   }
 
@@ -26,18 +26,19 @@ const GlobalStyles = createGlobalStyle`
     height:100%;
     display:flex;
     flex-direction:column;
+    align-items:center;
   }
 
   button {
     cursor: pointer;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.white};
     font-size: 1.4rem;
     border:0;
   }
 
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.white};
   }
 
   span, p, label, input, textarea, select, button, div {
