@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Container, Image } from './styles';
 import { SliderProps } from './types';
 
-export function Slider({ images }: SliderProps): JSX.Element {
+export function Slider({ images, width, height }: SliderProps): JSX.Element {
   const [imageActive, setImageActive] = useState(0);
 
   const imagesLength = images.length;
@@ -21,7 +21,7 @@ export function Slider({ images }: SliderProps): JSX.Element {
   }, [imageActive, imagesLength]);
 
   return (
-    <Container>
+    <Container width={width} height={height}>
       {images.map((image, index) => {
         return (
           <Image

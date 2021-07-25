@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 
-import { ImageStyledProps } from './types';
+import { ImageStyledProps, ContainerStyledProps } from './types';
 
-const Container = styled.div`
-  width: 24rem;
-  height: 42.7rem;
+const Container = styled.div<ContainerStyledProps>`
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   position: relative;
 `;
 

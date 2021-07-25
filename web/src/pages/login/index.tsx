@@ -51,7 +51,7 @@ export default function Login(): JSX.Element {
     <>
       <Container>
         <SliderContainer>
-          <Slider images={imagesSlider} />
+          <Slider images={imagesSlider} width="24rem" height="42.7rem" />
         </SliderContainer>
 
         <ContentContainer>
