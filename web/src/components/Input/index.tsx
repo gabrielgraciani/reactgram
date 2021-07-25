@@ -1,12 +1,4 @@
-import React, {
-  ChangeEvent,
-  useState,
-  useEffect,
-  useCallback,
-  useRef,
-} from 'react';
-
-import { KeyCodes } from '../../enum/KeyCodes';
+import React, { ChangeEvent, useState, useEffect, useRef } from 'react';
 
 import { Container, Label, Input as StyledInput } from './styles';
 import { InputProps } from './types';
@@ -20,56 +12,14 @@ export function Input({
   placeholder,
 }: InputProps): JSX.Element {
   const [isPlaceholderAnimate, setIsPlaceholderAnimate] = useState(false);
-  const [isInputActive, setIsInputActive] = useState(false);
 
   const wrapperRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  function handleFocus(e: ChangeEvent<HTMLInputElement>) {
+  function handleChangeInput(e: ChangeEvent<HTMLInputElement>) {
     setIsPlaceholderAnimate(e.currentTarget.value !== '');
     handleChange(e.target.value);
   }
-
-  const handleClickOutside = useCallback(
-    e => {
-      if (
-        isPlaceholderAnimate &&
-        !value &&
-        wrapperRef.current &&
-        !wrapperRef.current.contains(e.target)
-      ) {
-        setIsPlaceholderAnimate(false);
-      }
-    },
-    [isPlaceholderAnimate, value],
-  );
-
-  const handleTypeEsc = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.keyCode === KeyCodes.ESCAPE) {
-        if (inputRef && inputRef.current) {
-          inputRef.current.blur();
-        }
-        if (!value) {
-          setIsPlaceholderAnimate(false);
-        }
-      }
-    },
-    [value],
-  );
-
-  useEffect(() => {
-    if (isInputActive) {
-      window.addEventListener('mousedown', handleClickOutside);
-      window.addEventListener('keydown', handleTypeEsc);
-
-      return () => {
-        window.removeEventListener('mousedown', handleClickOutside);
-        window.removeEventListener('keydown', handleTypeEsc);
-      };
-    }
-    return undefined;
-  }, [handleClickOutside, handleTypeEsc, isInputActive]);
 
   useEffect(() => {
     if (value) {
@@ -87,13 +37,12 @@ export function Input({
       <StyledInput
         type={type}
         name={name}
+        id={name}
         value={value || ''}
         placeholder={placeholder}
-        onChange={e => handleFocus(e)}
+        onChange={e => handleChangeInput(e)}
         autoComplete="off"
         ref={inputRef}
-        onClick={() => setIsInputActive(true)}
-        onBlur={() => setIsInputActive(false)}
       />
     </Container>
   );
