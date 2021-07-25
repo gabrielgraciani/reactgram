@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { Breakpoints } from '../../enum/Breakpoints';
+
 const Container = styled.div`
   width: 90%;
   max-width: 80.5rem;
@@ -7,9 +9,24 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   flex: 1;
+
+  @media (max-width: ${Breakpoints.tiny}) {
+    justify-content: center;
+  }
 `;
 
-const Slider = styled.div``;
+const SliderContainer = styled.div`
+  width: 454px;
+  height: 618px;
+  background: url('images/phoneBackground.png') center no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 10rem 0 0 15rem;
+
+  @media (max-width: ${Breakpoints.tiny}) {
+    display: none;
+  }
+`;
 
 const ContentContainer = styled.div`
   width: 34rem;
@@ -46,6 +63,7 @@ const InputsContainer = styled.div`
 `;
 
 const SignUpText = styled.div`
+  text-align: center;
   > a {
     color: ${({ theme }) => theme.colors.blue};
     font-weight: bold;
@@ -54,7 +72,7 @@ const SignUpText = styled.div`
 
 export {
   Container,
-  Slider,
+  SliderContainer,
   ContentContainer,
   Box,
   Form,
