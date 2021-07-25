@@ -16,7 +16,15 @@ interface Request {
 }
 
 class CreateUserService {
-  public async execute({ name, email, password, username, biography, telephone, avatar }: Request): Promise<User> {
+  public async execute({
+    name,
+    email,
+    password,
+    username,
+    biography,
+    telephone,
+    avatar,
+  }: Request): Promise<User> {
     const usersRepository = getCustomRepository(UsersRepository);
 
     const checkEmailExists = await usersRepository.findByEmail(email);
@@ -40,7 +48,7 @@ class CreateUserService {
       username,
       biography,
       telephone,
-      avatar
+      avatar,
     });
 
     await usersRepository.save(user);

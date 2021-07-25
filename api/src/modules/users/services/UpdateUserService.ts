@@ -16,9 +16,17 @@ interface Request {
   avatar?: string;
 }
 
-
 class UpdatePostService {
-  public async execute({ id, name, email, password, username, biography, telephone, avatar  }: Request): Promise<User> {
+  public async execute({
+    id,
+    name,
+    email,
+    password,
+    username,
+    biography,
+    telephone,
+    avatar,
+  }: Request): Promise<User> {
     const usersRepository = getCustomRepository(UsersRepository);
 
     const user = await usersRepository.findOne({
