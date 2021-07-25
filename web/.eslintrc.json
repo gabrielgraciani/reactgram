@@ -52,7 +52,9 @@
      "react/jsx-props-no-spreading": "off",
      "no-shadow": "off",
      "no-param-reassign": "off",
-     "@typescript-eslint/no-empty-interface": "off"
+     "@typescript-eslint/no-empty-interface": "off",
+     "import/no-extraneous-dependencies": "off",
+     "@typescript-eslint/no-empty-function": "off"
     },
     "settings": {
       "import/resolver": {

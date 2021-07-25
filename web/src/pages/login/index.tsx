@@ -76,13 +76,7 @@ export default function Login(): JSX.Element {
                 />
               </InputsContainer>
 
-              <Button
-                onClick={() => {
-                  console.log('clicou');
-                }}
-              >
-                Entrar
-              </Button>
+              <Button onClick={() => {}}>Entrar</Button>
             </Form>
           </Box>
 
