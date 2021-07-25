@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "server": "json-server server.json -p 3333",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "axios": "^0.21.1",
