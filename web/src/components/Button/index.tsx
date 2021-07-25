@@ -7,7 +7,12 @@ export function Button({
   disabled,
 }: ButtonProps): JSX.Element {
   return (
-    <StyledButton type="button" onClick={onClick} disabled={disabled}>
+    <StyledButton
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      data-testid="button"
+    >
       {children}
     </StyledButton>
   );
