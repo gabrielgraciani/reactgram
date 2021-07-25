@@ -23,8 +23,10 @@ class UsersController {
   }
 
   async create(request: Request, response: Response): Promise<Response> {
-    const { name, email, password, username, biography, telephone, avatar } =
+    const { name, email, password, username, biography, telephone } =
       request.body;
+
+    const filename = request.file !== undefined ? request.file.filename : null;
 
     const createUser = new CreateUserService();
     const user = await createUser.execute({
@@ -34,7 +36,7 @@ class UsersController {
       username,
       biography,
       telephone,
-      avatar,
+      avatar: filename,
     });
 
     return response.json(user);
