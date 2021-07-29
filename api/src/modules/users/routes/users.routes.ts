@@ -13,6 +13,11 @@ const upload = multer(uploadConfig);
 usersRouter.get('/', usersController.index);
 usersRouter.get('/:id', usersController.find);
 usersRouter.post('/', upload.single('avatar'), usersController.create);
-usersRouter.put('/:id', ensureAuthenticated, usersController.update);
+usersRouter.put(
+  '/:id',
+  ensureAuthenticated,
+  upload.single('avatar'),
+  usersController.update,
+);
 
 export default usersRouter;

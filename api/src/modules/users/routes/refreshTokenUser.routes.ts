@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
-import RefreshTokenUser from '../controllers/RefreshTokenUserController';
+import RefreshTokenUserController from '../controllers/RefreshTokenUserController';
 
 const sessionsRouter = Router();
-const refreshTokenUser = new RefreshTokenUser();
+const refreshTokenUser = new RefreshTokenUserController();
 
 sessionsRouter.post('/', refreshTokenUser.create);
 

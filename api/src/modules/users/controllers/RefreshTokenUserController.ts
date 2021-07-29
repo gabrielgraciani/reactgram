@@ -9,6 +9,6 @@ export default class RefreshTokenUserController {
     const refreshTokenUser = new RefreshTokenUser();
     const token = await refreshTokenUser.execute(refresh_token);
 
-    return response.json({ token });
+    return response.json(token);
   }
 }

@@ -1,4 +1,5 @@
 import { getCustomRepository } from 'typeorm';
+import { hash } from 'bcryptjs';
 
 import AppError from '../../../errors/AppError';
 
@@ -49,9 +50,11 @@ class UpdatePostService {
       throw new AppError('This username is already used');
     }
 
+    const hashedPassword = await hash(password, 8);
+
     user.name = name;
     user.email = email;
-    user.password = password;
+    user.password = hashedPassword;
     user.username = username;
     user.biography = biography;
     user.telephone = telephone;

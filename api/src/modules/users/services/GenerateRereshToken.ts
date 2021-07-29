@@ -7,7 +7,7 @@ export class GenerateRefreshToken {
   public async execute(userId: number): Promise<RefreshToken> {
     const refreshTokenRepository = getRepository(RefreshToken);
 
-    const expiresIn = dayjs().add(60, 'second').unix();
+    const expiresIn = dayjs().add(1, 'day').unix();
 
     const generateRefreshToken = await refreshTokenRepository.create({
       user_id: userId,
